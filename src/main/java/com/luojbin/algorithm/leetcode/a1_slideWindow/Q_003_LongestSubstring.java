@@ -1,4 +1,4 @@
-package com.luojbin.algorithm.leetcode.Q001_100;
+package com.luojbin.algorithm.leetcode.a1_slideWindow;
 
 import org.junit.jupiter.api.Test;
 
