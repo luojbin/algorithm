@@ -23,6 +23,7 @@ public class Q_021_MergeTwoSortedLists {
     }
 
     public ListNode<Integer> mergeTwoLists(ListNode<Integer> list1, ListNode<Integer> list2) {
+        // 基准情形, 不需要向下递归
         if (list1 == null){
             return list2;
         } else if (list2 == null) {
