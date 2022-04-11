@@ -2,18 +2,21 @@ package com.luojbin.algorithm.structures.tree.node;
 
 import lombok.Data;
 
+/**
+ * 二叉树的基本节点
+ */
 @Data
-public class BinaryTreeNode {
+public class BinaryTreeNode<T> {
 
-    private Object element;
-    private BinaryTreeNode left;
-    private BinaryTreeNode right;
+    private T element;
+    private BinaryTreeNode<T> left;
+    private BinaryTreeNode<T> right;
 
-    public BinaryTreeNode(Object element) {
+    public BinaryTreeNode(T element) {
         this.element = element;
     }
 
-    public BinaryTreeNode(Object element, BinaryTreeNode left, BinaryTreeNode right) {
+    public BinaryTreeNode(T element, BinaryTreeNode<T> left, BinaryTreeNode<T> right) {
         this.element = element;
         this.left = left;
         this.right = right;
