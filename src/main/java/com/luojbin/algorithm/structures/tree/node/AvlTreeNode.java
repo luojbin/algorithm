@@ -1,11 +1,11 @@
 package com.luojbin.algorithm.structures.tree.node;
 
-public class AvlTreeNode<T extends Comparable<T>> {
+public class AvlTreeNode {
 
-    private BinaryTreeNode<T> root;
+    private BinaryTreeNode root;
 
     // 构造函数
-    public AvlTreeNode(BinaryTreeNode<T> root) {
+    public AvlTreeNode(BinaryTreeNode root) {
         this.root = root;
     }
 
@@ -19,13 +19,13 @@ public class AvlTreeNode<T extends Comparable<T>> {
     //endregion
 
     //region 查找元素
-    public boolean contains(T x) {
+    public boolean contains(Object x) {
         if (x == null) {
             return false;
         }
         return contains(x, root);
     }
-    private boolean contains(T x, BinaryTreeNode<T> node) {
+    private boolean contains(Object x, BinaryTreeNode node) {
         // 是否当前节点
         if (x.equals(node.getElement())) {
             return true;
@@ -43,17 +43,17 @@ public class AvlTreeNode<T extends Comparable<T>> {
     }
     //endregion
 
-    public T findMax() {
+    public Object findMax() {
         return findMax(root);
     }
-    private T findMax(BinaryTreeNode<T> node) {
+    private Object findMax(BinaryTreeNode node) {
         if (node.getRight() == null) {
             return node.getElement();
         }
         return findMax(node.getRight());
     }
-    public T findMin() {
-        BinaryTreeNode<T> current = root;
+    public Object findMin() {
+        BinaryTreeNode current = root;
         while (current.getLeft() != null) {
             current = current.getLeft();
         }
@@ -73,36 +73,36 @@ public class AvlTreeNode<T extends Comparable<T>> {
               /
              1
          */
-        BinaryTreeNode<Integer> n7 = new BinaryTreeNode<>(7);
+        BinaryTreeNode n7 = new BinaryTreeNode(7);
 
 
-        BinaryTreeNode<Integer> n5 = new BinaryTreeNode<>(5);
-        BinaryTreeNode<Integer> n10 = new BinaryTreeNode<>(10);
+        BinaryTreeNode n5 = new BinaryTreeNode(5);
+        BinaryTreeNode n10 = new BinaryTreeNode(10);
         n7.setLeft(n5);
         n7.setRight(n10);
 
-        BinaryTreeNode<Integer> n3 = new BinaryTreeNode<>(3);
-        BinaryTreeNode<Integer> n6 = new BinaryTreeNode<>(6);
+        BinaryTreeNode n3 = new BinaryTreeNode(3);
+        BinaryTreeNode n6 = new BinaryTreeNode(6);
         n5.setLeft(n3);
         n5.setRight(n6);
-        BinaryTreeNode<Integer> n8 = new BinaryTreeNode<>(8);
-        BinaryTreeNode<Integer> n12 = new BinaryTreeNode<>(12);
+        BinaryTreeNode n8 = new BinaryTreeNode(8);
+        BinaryTreeNode n12 = new BinaryTreeNode(12);
         n10.setLeft(n8);
         n10.setRight(n12);
 
-        BinaryTreeNode<Integer> n2 = new BinaryTreeNode<>(2);
-        BinaryTreeNode<Integer> n4 = new BinaryTreeNode<>(4);
+        BinaryTreeNode n2 = new BinaryTreeNode(2);
+        BinaryTreeNode n4 = new BinaryTreeNode(4);
         n3.setLeft(n2);
         n3.setRight(n4);
-        BinaryTreeNode<Integer> n9 = new BinaryTreeNode<>(9);
-        BinaryTreeNode<Integer> n11 = new BinaryTreeNode<>(11);
+        BinaryTreeNode n9 = new BinaryTreeNode(9);
+        BinaryTreeNode n11 = new BinaryTreeNode(11);
         n8.setRight(n9);
         n12.setLeft(n11);
 
-        BinaryTreeNode<Integer> n1 = new BinaryTreeNode<>(1);
+        BinaryTreeNode n1 = new BinaryTreeNode(1);
         n2.setLeft(n1);
 
-        AvlTreeNode<Integer> tree = new AvlTreeNode<>(n7);
+        AvlTreeNode tree = new AvlTreeNode(n7);
         System.out.println(tree.contains(6));
         System.out.println(tree.contains(2));
         System.out.println(tree.contains(13));
