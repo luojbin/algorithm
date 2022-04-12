@@ -121,7 +121,7 @@ public class AvlTree<K extends Comparable<K>>{
         } else {
             // 重复元素, 不做操作
         }
-        // dev_note 插入节点后重新平衡
+        // dev_note 插入节点后重新平衡, 由于在递归中处理平衡, 会从最底层开始检验平衡
         return balance(tree);
     }
 
@@ -274,7 +274,8 @@ public class AvlTree<K extends Comparable<K>>{
                 t = t.getRight();
             }
         }
-        return t;
+        // 移除元素后, 也要重新平衡
+        return balance(t);
     }
     // endregion
 
