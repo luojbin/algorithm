@@ -17,7 +17,7 @@ public class T5_AvlTreeDemo {
         for (int i : array) {
             tree.insert(i);
         }
-        System.out.println();
+        tree.printTree();
 
         for (int j : array) {
             tree.remove(j);

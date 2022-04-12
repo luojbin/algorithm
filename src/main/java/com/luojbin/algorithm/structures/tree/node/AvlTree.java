@@ -279,4 +279,19 @@ public class AvlTree<K extends Comparable<K>>{
     }
     // endregion
 
+    public void printTree() {
+        if (isEmpty()) {
+            System.out.println("<empty tree>");
+        } else {
+            printTree(root);
+        }
+    }
+
+    public void printTree(AvlNode<K> tree) {
+        if (tree != null) {
+            printTree(tree.getLeft());
+            System.out.println(tree.getElement());
+            printTree(tree.getRight());
+        }
+    }
 }
